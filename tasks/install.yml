@@ -1,0 +1,19 @@
+---
+# tasks file for adriagalin.locales
+- name: install locales package
+  apt: name=locales state=latest update_cache=yes cache_valid_time={{ ag_apt_cache_valid_time }}
+  tags: [common, locales]
+
+- name: install language packs if specified
+  apt: name={{ item.language }} state={{ item.state }}
+  with_items: ag_locales_language_packs_present
+  when: ag_locales_language_packs_present
+  notify: update locales
+  tags: [common, locales]
+
+- name: remove language packs if specified
+  apt: name={{ item }} state=absent
+  with_items: ag_locales_language_packs_absent
+  when: ag_locales_language_packs_absent
+  notify: update locales
+  tags: [common, locales]

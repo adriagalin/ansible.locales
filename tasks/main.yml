@@ -1,0 +1,6 @@
+---
+# tasks file for adriagalin.locales
+- include: install.yml
+  tags: [common, locales]
+- include: config.yml
+  tags: [common, locales]

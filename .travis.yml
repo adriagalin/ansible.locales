@@ -1,0 +1,37 @@
+language: python
+
+python:
+  - 2.7
+
+sudo: required
+
+env:
+  - ANSIBLE_VERSION=latest
+  - ANSIBLE_VERSION=1.9.2
+
+branches:
+  only:
+    - master
+
+install:
+  # Install Ansible.
+  - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install ansible; else pip install ansible==$ANSIBLE_VERSION; fi
+
+  # Add ansible.cfg to pick up roles path.
+  - printf "[defaults]\nroles_path = ../" > ansible.cfg
+
+script:
+  # Check the role/playbook's syntax.
+  - ansible-playbook -i tests/inventory tests/test.yml --syntax-check
+
+matrix:
+  fast_finish: true
+
+notifications:
+  email: false
+  hipchat:
+    rooms:
+      secure: z9Uf8jArCGUTqv4+faOWKOhxINzOM+v6lDdOoLBtx5m2+kXq6+YSJuOmVq/2+8ygcShIYTIWd21PEgck1quVHtQDaTNblxzQL5AQSSkCdoVHZp2gro6TLVJJfKbOYRreE4DerA74Q7l67lNvjzlvTvV0ncDrZWbXHhw6hDuMZuctUrHrVri2EaMVoU7PiLTnSP8dv2wQHS2lTnA6SQXF19PGx+XS5QPAGVP7kQcN5mp0TwaF1VNBFjnR1E6y1AesGCswid7gmZ/NvdZ5rjjlJq14XXZTMLuHQeFMZp1RWuf1IkHwXjeGqp00IE8TDgP3+R7YQkt9gbOK1lXAxAWYcAFo5tFxtkKbJLXorjeuXQzet1s5GxDY2gcoxwehNNWou9/jfT0aSgGtsb4mvXUcJVVw50oBldx6hA/cykwtRqdvG+uzlRoscs5sVOgPhkFS1a/ykpN64eEz/GgfjQW82UPOKtnphLnwrVZX7ODknuJk0fbnZhBLAOJz4npDtrrM0NeRVBnvqBwc/kFUhYrRGdplcmVHYNkzhekrZ/jJ/n0KoLvbY4tc+PSgbglUBSV6Yd4yseUx041YaGKGhQEDtDlILKV6Bt4H5wXPYJ1Cr+BSnLIiQ/LY8Y5Ea9+lIBDTEgG9JMwRcvI6ljziw0YTb288Hi8vUn7h2A4UQ5mQb/g=
+    template:
+    - '%{repository}#%{build_number} (%{branch} - %{commit} : %{author}): %{message} %{build_url}'
+    notify: true

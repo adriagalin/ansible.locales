@@ -1,0 +1,14 @@
+---
+galaxy_info:
+  author: Adria Galin Figueras
+  description: Install and configure locales in your systems.
+  company: Adria Galin
+  license: GPLv3
+  min_ansible_version: 1.7
+  platforms:
+    - name: Ubuntu
+      versions:
+        - all
+  categories:
+    - system
+dependencies: []
