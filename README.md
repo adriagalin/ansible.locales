@@ -1,7 +1,7 @@
 adriagalin.locales
 =========
 
-[![Build Status](https://travis-ci.org/adriagalin/ansible.locales.svg?branch=master)](https://travis-ci.org/adriagalin/ansible.locales) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-locales-blue.svg)](https://galaxy.ansible.com/list#/roles/)
+[![Build Status](https://travis-ci.org/adriagalin/ansible.locales.svg?branch=master)](https://travis-ci.org/adriagalin/ansible.locales) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-locales-blue.svg)](https://galaxy.ansible.com/list#/roles/4785)
 
 An ansible role to install the locales package and set up your system's locale.
 
