@@ -3,25 +3,27 @@
 - name: detect locale configuration file
   stat: path={{ ag_locale_config_path }}
   register: locale_configuration_stats
+  tags: [common, configuration, locales]
 
 - name: ensure locale configuration file is created
   file: path={{ ag_locale_config_path }} state=touch
   when: not locale_configuration_stats.stat.exists
+  tags: [common, configuration, locales]
 
 - name: generate present locales
   command: locale-gen {{ item }}
   with_items: ag_locales_present
   when: ag_locales_present
   notify: update locales
-  tags: [common, configuration, locales]
+  tags: [common, configuration, locales, generate_locales]
 
 - name: remove unused locales
   command: locale-gen --purge {{ item }}
   with_items: ag_locales_absent
   when: ag_locales_absent
   notify: update locales
-  tags: [common, configuration, locales]
+  tags: [common, configuration, locales, generate_locales]
 
 - name: set default locale
   template: src=etc/default/locale.j2 dest=/etc/default/locale owner=root group=root mode=0644
-  tags: [common, configuration, locales]
+  tags: [common, configuration, locales, generate_locales]
