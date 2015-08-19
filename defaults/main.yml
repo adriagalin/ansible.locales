@@ -14,6 +14,7 @@ ag_locales_language_packs_present:
 ag_locales_language_packs_absent: []
 
 ag_default_locale: en_US.UTF-8
+ag_locale_all: en_US.UTF-8
 
 ag_locales_present:
   - en_US.UTF-8
