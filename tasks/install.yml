@@ -1,7 +1,11 @@
 ---
 # tasks file for adriagalin.locales
+- name: update apt cache
+  apt: update_cache=yes cache_valid_time={{ ag_apt_cache_valid_time }}
+  tags: [common, locales]
+
 - name: install locales package
-  apt: name=locales state=latest update_cache=yes cache_valid_time={{ ag_apt_cache_valid_time }}
+  apt: name=locales state=latest
   tags: [common, locales]
 
 - name: install language packs if specified
