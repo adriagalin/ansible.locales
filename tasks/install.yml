@@ -6,7 +6,7 @@
 
 - name: install locales package
   apt: name=locales state=latest
-  tags: [common, locales]
+  tags: [common, locales, skip_ansible_lint]
 
 - name: install language packs if specified
   apt: name={{ item.language }} state={{ item.state }}
