@@ -12,14 +12,14 @@
 
 - name: generate present locales
   command: locale-gen {{ item }}
-  with_items: ag_locales_present
+  with_items: "{{ ag_locales_present }}"
   when: ag_locales_present
   notify: update locales
   tags: [common, configuration, locales, generate_locales]
 
 - name: remove unused locales
   command: locale-gen --purge {{ item }}
-  with_items: ag_locales_absent
+  with_items: "{{ ag_locales_absent }}"
   when: ag_locales_absent
   notify: update locales
   tags: [common, configuration, locales, generate_locales]

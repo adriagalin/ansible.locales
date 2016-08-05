@@ -23,10 +23,6 @@ Role Variables
 # the amount in seconds to cache apt-update.
 ag_apt_cache_valid_time: 3600
 
-# the locale(s) that you want to use.
-locale_locales:
-  - { locale: en_US.UTF-8, state: present }
-
 # the locale file.
 ag_locale_config_path: /var/lib/locales/supported.d/local
 

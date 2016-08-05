@@ -6,18 +6,18 @@
 
 - name: install locales package
   apt: name=locales state=latest
-  tags: [common, locales]
+  tags: [common, locales, skip_ansible_lint]
 
 - name: install language packs if specified
   apt: name={{ item.language }} state={{ item.state }}
-  with_items: ag_locales_language_packs_present
+  with_items: "{{ ag_locales_language_packs_present }}"
   when: ag_locales_language_packs_present
   notify: update locales
   tags: [common, locales]
 
 - name: remove language packs if specified
   apt: name={{ item }} state=absent
-  with_items: ag_locales_language_packs_absent
+  with_items: "{{ ag_locales_language_packs_absent }}"
   when: ag_locales_language_packs_absent
   notify: update locales
   tags: [common, locales]
