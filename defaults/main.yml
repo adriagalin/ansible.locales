@@ -2,7 +2,7 @@
 # defaults file for adriagalin.locales
 ag_apt_cache_valid_time: 3600
 
-ag_locale_config_path: /var/lib/locales/supported.d/local
+ag_locale_config_path: /var/lib/locales/supported.d
 
 ag_locales_language_packs_present:
   - { language: language-pack-en, state: latest }
