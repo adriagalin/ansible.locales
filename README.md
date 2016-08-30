@@ -1,5 +1,5 @@
 adriagalin.locales
-=========
+==================
 
 [![Build Status](https://travis-ci.org/adriagalin/ansible.locales.svg?branch=master)](https://travis-ci.org/adriagalin/ansible.locales) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-locales-blue.svg)](https://galaxy.ansible.com/list#/roles/4785)
 
@@ -10,11 +10,11 @@ Requirements
 
 Tested on:
 
-Ubuntu 14.04 LTS
+-	Ubuntu 14.04 LTS
 
 Should work with:
 
-All Ubuntu
+-	All Ubuntu
 
 Role Variables
 --------------
@@ -54,6 +54,7 @@ None.
 
 Example Playbook
 ----------------
+
 ```yaml
     - hosts: servers
       roles:
@@ -61,8 +62,9 @@ Example Playbook
 ```
 
 ToDo
--------
-- Add Debian path for locale.
+----
+
+-	Add Debian path for locale.
 
 License
 -------
@@ -75,14 +77,14 @@ Author Information
 [Adrià Galín](http://www.adriagalin.com)
 
 Inspiration
-------------------
+-----------
 
 During development, some roles in Ansible Galaxy/Github also inspired me:
 
-  - [michaelrigart](https://github.com/michaelrigart/ansible-role-motd)
-  - [knopki](https://github.com/knopki/ansible-locale)
-  - [tersmitten](https://github.com/Oefenweb/ansible-locales)
-  - [nickjj](https://github.com/nickjj/ansible-locale)
-  - and many others.
+-	[michaelrigart](https://github.com/michaelrigart/ansible-role-motd)
+-	[knopki](https://github.com/knopki/ansible-locale)
+-	[tersmitten](https://github.com/Oefenweb/ansible-locales)
+-	[nickjj](https://github.com/nickjj/ansible-locale)
+-	and many others.
 
-  thank you.
+thank you.
