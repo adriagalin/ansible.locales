@@ -6,7 +6,6 @@ ag_locale_config_path: /var/lib/locales/supported.d
 
 ag_locales_language_packs_present:
   - { language: language-pack-en, state: latest }
-  - { language: language-pack-en-base, state: latest }
 
 ag_locales_language_packs_absent: []
 
