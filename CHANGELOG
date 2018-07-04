@@ -8,3 +8,6 @@
 - Remove unused local variable locale_locales
 - Change locale file creation
 - Add tags
+
+1.1.1 04 July 2018 Adria Galin <adriagalin.com>
+- Remove language-pack-en-base in defaults vars
