@@ -10,4 +10,4 @@
 - Add tags
 
 1.1.1 04 July 2018 Adria Galin <adriagalin.com>
-- Remove language-pack-en-base in defaults vars
+- Remove language-pack-en-base package in defaults vars
